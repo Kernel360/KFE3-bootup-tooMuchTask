@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { ButtonStyle } from "./style";
+import { ButtonStyle } from "./styles";
 
 interface Props {
   size: string;
