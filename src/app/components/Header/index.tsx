@@ -7,6 +7,7 @@ import Link from 'next/link';
 
 export const Header = () => {
   const pathname = usePathname();
+  const path = pathname.split('/');
 
   return (
     <>
