@@ -14,6 +14,7 @@ interface location {
 }
 
 export const Header = () => {
+  // 현재 헤더의 타입을 관리하는 state (home, detail, chat, profile)
   const [headerType, setHeaderType] = useState<string | null>();
   const [name, setName] = useState<string>('상대방 닉네임');
   const [locations, setLocations] = useState<location[]>([]);
@@ -21,6 +22,8 @@ export const Header = () => {
   const router = useRouter();
 
   const handleBack = () => router.back();
+
+  // 현재 경로(pathname)에 따라 헤더 타입을 판별하는 함수
   const getHeaderType = (pathname: string): string | null => {
     if (pathname === '/') return 'home';
     if (pathname.startsWith('/product')) return 'detail';
@@ -29,6 +32,7 @@ export const Header = () => {
     return null;
   };
 
+  // 경로가 바뀔 때마다 헤더 타입 갱신
   useEffect(() => {
     setHeaderType(getHeaderType(pathname));
   }, [pathname]);
@@ -36,12 +40,14 @@ export const Header = () => {
   return (
     <>
       <Wrapper headerType={headerType!}>
+        {/* home 이 아닐 경우 뒤로가기 버튼 노출 */}
         {headerType !== 'home' && (
           <IconButton aria-label='뒤로 가기' onClick={handleBack}>
             <ArrowBackIosNewIcon />
           </IconButton>
         )}
 
+        {/* 홈일 때 아코디언 + 알림 버튼 노출 */}
         {headerType === 'home' && (
           <>
             <Accordion buttonTitle='버튼명'>
