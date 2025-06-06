@@ -19,7 +19,7 @@ export interface Props {
   color: ChipColorKey;
 }
 
-export const Chip = ({ title, color = "neutral" }: Props) => {
+export const Chip = ({ title, color }: Props) => {
   return (
     <ChipStyle
       color={color}

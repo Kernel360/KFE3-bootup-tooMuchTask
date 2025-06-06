@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 const ColorMap = {
-  teal: "00CFB6",
+  teal: "#00CFB6",
   rose: "#FF5A74",
   neutral: "#8F8F8F",
 };
