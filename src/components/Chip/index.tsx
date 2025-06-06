@@ -12,9 +12,22 @@
  * <Chip title="즉시구매가" color="teal" />
  */
 
+import { ChipStyle, ChipColorKey } from "./styles";
 
-interface ChipProps {
+export interface Props {
   title: string;
-  color?: "teal" | "rose" | "neutral";
+  color: ChipColorKey;
 }
-export * from "./Chip";
+
+export const Chip = ({ title, color = "neutral" }: Props) => {
+  return (
+    <ChipStyle
+      color={color}
+      className="px-2 py-0.5 rounded-[20px] backdrop-blur-md inline-flex justify-center items-center gap-2.5 "
+    >
+      {title}
+    </ChipStyle>
+  );
+};
+
+export default Chip;
