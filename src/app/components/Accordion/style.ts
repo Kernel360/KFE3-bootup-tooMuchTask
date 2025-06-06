@@ -1,8 +1,19 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'active',
+})<{ active: boolean }>`
   display: flex;
   justify-content: space-between;
+  position: relative;
+  ${({ active }) =>
+    active &&
+    `
+      ul {
+      opacity: 1;
+      visibility: visible;
+      }
+    `}
 `;
 
 const AccordionButton = styled.button`
@@ -13,7 +24,7 @@ const AccordionButton = styled.button`
   font-size: 14px;
   font-weight: 500;
   height: 44px;
-  padding: 0 20px;
+  padding: 0 14px 0 20px;
   cursor: pointer;
   border: 1px solid var(--color-neutral-900);
   border-radius: 40px;
@@ -30,8 +41,32 @@ const AccordionButton = styled.button`
   }
 `;
 
-const ListWrapper = styled.div`
-  display: none;
+const AccordionListWrapper = styled.ul`
+  visibility: hidden;
+  opacity: 0;
+
+  width: 120px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding: 14px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  transition: ease-in-out 0.15s all;
+
+  li {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+
+  li + li {
+    border-top: 1px solid #d2d1d2;
+    padding-top: 12px;
+    margin-top: 11px;
+  }
 `;
 
-export { Wrapper, AccordionButton, ListWrapper };
+export { Wrapper, AccordionButton, AccordionListWrapper };

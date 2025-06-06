@@ -45,9 +45,11 @@ export const Header = () => {
         {headerType === 'home' && (
           <>
             <Accordion buttonTitle='버튼명'>
+              {/* 지역 리스트는 반드시 li로 감싸야합니다. */}
               {locations?.map(({ name }, idx) => {
                 return <li key={idx}>{name}</li>;
               })}
+              <li>내용 아무거나</li>
               <li>
                 <Link href={'/'}>거래지역 수정</Link>
               </li>
