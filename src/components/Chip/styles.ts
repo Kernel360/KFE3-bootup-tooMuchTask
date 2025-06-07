@@ -17,7 +17,7 @@ export const ChipStyle = styled.div`
   font-size: 8px;
   font-weight: bold;
 
-  ${({ color }: ChipStyleProps) => {
+  ${({ color }) => {
     return css`
       background-color: ${ColorMap[color]};
     `;

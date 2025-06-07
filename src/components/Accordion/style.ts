@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div.withConfig({
-  shouldForwardProp: (prop) => prop !== 'active',
+  shouldForwardProp: prop => prop !== "active",
 })<{ active: boolean }>`
   display: flex;
   justify-content: space-between;
@@ -53,6 +53,11 @@ const AccordionListWrapper = styled.ul`
   box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   transition: ease-in-out 0.15s all;
+
+  &,
+  li {
+    list-style: none;
+  }
 
   li {
     font-size: 14px;
