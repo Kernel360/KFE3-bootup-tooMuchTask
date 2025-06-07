@@ -1,6 +1,6 @@
 'use client';
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // 전체 체크박스 영역 wrapper 스타일
 const CheckWrapper = styled.div`
