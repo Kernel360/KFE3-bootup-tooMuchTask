@@ -1,6 +1,9 @@
+'use client';
+
 import { ReactNode, useRef, useState } from 'react';
 import { Wrapper, AccordionButton, AccordionListWrapper } from './style';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import Link from 'next/link';
 
 // Accordion 컴포넌트: 접고 펼칠 수 있는 UI를 구현
 export const Accordion = ({ children, buttonTitle }: { children: ReactNode; buttonTitle: string }) => {
@@ -22,7 +25,12 @@ export const Accordion = ({ children, buttonTitle }: { children: ReactNode; butt
           <KeyboardArrowDownIcon />
         </i>
       </AccordionButton>
-      <AccordionListWrapper>{children}</AccordionListWrapper>
+      <AccordionListWrapper>
+        {children}
+        <li>
+          <Link href={'/'}>거래지역관리</Link>
+        </li>
+      </AccordionListWrapper>
     </Wrapper>
   );
 };
