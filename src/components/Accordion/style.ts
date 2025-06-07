@@ -44,8 +44,7 @@ const AccordionButton = styled.button`
 const AccordionListWrapper = styled.ul`
   visibility: hidden;
   opacity: 0;
-
-  width: 120px;
+  min-width: 120px;
   position: absolute;
   top: 50px;
   left: 0;
@@ -65,6 +64,7 @@ const AccordionListWrapper = styled.ul`
     font-weight: 500;
     padding: 0 4px;
     box-sizing: border-box;
+    list-style: none;
   }
 
   li + li {
