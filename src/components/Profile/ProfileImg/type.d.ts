@@ -1,2 +1,2 @@
-export type ImgSizeKey = keyof typeof Size;
-export type Variant = "circle" | "square";
+export type ImgSizeKey = "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
+export type Variant = "circle" | "rounded";

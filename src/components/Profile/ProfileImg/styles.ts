@@ -16,19 +16,19 @@ interface ImgProps {
   imgUrl: string;
 }
 
-export const ProfileImgStyle = styled.div`
-  ${({ size, variant, imgUrl }: ImgProps) => {
-    const width = Size[size as keyof typeof Size];
-    const radius = variant === "circle" ? "50%" : "10px";
+export const ProfileImgStyle = styled.div.attrs<ImgProps>(({ size, variant, imgUrl }) => {
+  const width = Size[size];
+  const radius = variant === "circle" ? "50%" : "10px";
 
-    return css`
-      width: ${width};
-      height: ${width};
-      border-radius: ${radius};
-      background-image: url(${imgUrl});
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    `;
-  }}
-`;
+  return {
+    style: {
+      width,
+      height: width,
+      borderRadius: radius,
+      backgroundImage: `url(${imgUrl})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    },
+  };
+})<ImgProps>``;
