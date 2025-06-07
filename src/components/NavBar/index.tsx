@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import styled, { css } from "styled-components";
 import HomeFilledIcon from "@mui/icons-material/HomeFilled";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
+import { NavBar, NavIcon, NavItemWrapper } from "./styles";
 
 const navItems = [
   { href: "/", label: "홈", icon: <HomeFilledIcon /> },
@@ -31,45 +31,3 @@ export default function Home() {
     </NavBar>
   );
 }
-
-// 스타일
-
-const NavBar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 96px;
-  padding: 16px 24px 24px;
-`;
-
-const NavItemWrapper = styled.div.withConfig({
-  shouldForwardProp: (prop) => prop !== "$active",
-})<{ $active?: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  width: 56px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--color-neutral-400);
-  text-decoration: none;
-
-  svg {
-    fill: var(--color-neutral-400);
-    width: 20px;
-    height: 20px;
-  }
-
-  ${({ $active }) =>
-    $active &&
-    css`
-      color: var(--color-teal-500);
-
-      svg {
-        fill: var(--color-teal-500);
-      }
-    `}
-`;
-
-const NavIcon = styled.div``;
