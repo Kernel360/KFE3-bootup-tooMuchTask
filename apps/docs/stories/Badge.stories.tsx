@@ -45,8 +45,8 @@ export const AllTypes: Story = {
   },
   render: () => (
     <div className='flex gap-4 items-center'>
-      {(Object.keys(BADGE_VARIANTS) as BadgeKey[]).map((key) => (
-        <Badge key={key} title={key} />
+      {(Object.keys(BADGE_VARIANTS) as BadgeKey[]).map((key, index) => (
+        <Badge key={index} title={key} />
       ))}
     </div>
   ),

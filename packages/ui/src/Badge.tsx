@@ -30,7 +30,9 @@ const Badge = ({ title, className = '' }: BadgeProps) => {
         height={500}
         alt='test'
       />
-      <span className={`px-3 py-1 rounded-full text-sm ${style} ${className}`}>
+      <span
+        className={`px-3 py-1 rounded-full text-sm bg-red-500 ${style} ${className}`}
+      >
         {label}
       </span>
     </>
