@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 import { ButtonStyle } from './styles';
 
-interface Props {
+export interface Props {
   size: string;
   color: string;
   variant: string;
